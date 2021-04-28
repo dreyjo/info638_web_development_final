@@ -1,0 +1,14 @@
+/* This stylesheet is primarily for bringing in typesfaces, element color, and possibly content size*/
+/* Bootstrap is utilized for page structuring and some elements/element colors where easier to deploy */
+
+body {
+  background-color: #424c52;
+}
+
+h1.title {
+  color: #1da1f2;
+}
+
+div.nav {
+  color: #ede6d7;
+}
