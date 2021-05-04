@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Feather Homepage</title>
-
-    <!--linking Bootsrap-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-    <link href="design/css/bootstrap.min.css" rel="stylesheet">
-
-    <!--linking my stylesheet-->
-    <link href="feather.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="pagelist">
-      <h1 class="title">Feather</h1>
-      <h2 class="subtitle">A Bookmark Tender</h2>
-      <div class="nav">
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="bookmarks.php">Bookmarks</a></li>
-          <li><a href="tags.php">Tags</a></li>
-          <li><a href="about.php">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="content">
-      <h2>Most Recent Bookmarks:</h2>
 <?php
-//database login credentials
-//host name
-$hn = 'localhost';
-//databasename
-$db = 'ajonatha';
-//username
-$un = 'root';
-$pw = '';
-//$_SESSION
+include_once "header.php";
+include_once "db_connect.php";
+include_once "nav.php";
 
-//Connect to SQL database
-$conn = new mysqli($hn, $un, $pw, $db);
-if ($conn->connect_error) die($conn->connect_error);
+echo '<div id="content">
+  <h2>Most Recent Bookmarks:</h2>';
+
+$conn = open_conn();
 
 //Building the query for the results we want.
 //the home/index page will show the 10 most recent
@@ -61,13 +27,14 @@ while ($row = $result->fetch_assoc()) {
     }
     echo "<hr>";
 }
-
+echo '</div>';
 $result->close();
-$conn->close();
+// $conn->close();
+close_conn($conn);
 
 
 ?>
-    </div>
+    <!-- </div>
 
   </body>
-</html>
+</html> -->
