@@ -14,8 +14,32 @@ echo
 
 <p>Password:-</p><input type="text" name="pass" required=""><br>
 
-<input type="submit" value="Login">
+<input type="submit" name="submit" value="Login">
 
 <form>';
 echo "</div>";
+
+//login connection to database:
+include_once "db_connect.php";
+$conn = open_conn();
+
+if(isset($_POST['submit']))
+{
+$user = $_POST['name'];
+$pass = $_POST['pass'];
+
+$query = mysqli_query($conn,"SELECT * FROM user where username='$user'and password='$pass'");
+$result=mysqli_fetch_array($query);
+if($result)
+{
+echo "You are login Successfully ";
+header("location: index.php");   // create my-account.php page for redirection
+
+}
+else
+{
+	echo "failed ";
+}
+}
+close_conn($conn);
  ?>
