@@ -1,8 +1,8 @@
-<?php  
-echo '<div id="pagelist">
-  <h1 class="title">Feather</h1>
-  <h2 class="subtitle">A Bookmark Tender</h2>
-  <div class="nav">
+<?php
+echo '<div id="pagelist" class="col-lg-6">
+  <h1 class="title", margin-bottom:0>Feather</h1>
+  <h2 class="subtitle" class="display-4">A Bookmark Tender</h2>
+  <div id="nav">
     <ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About</a></li>

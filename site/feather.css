@@ -7,8 +7,25 @@ body {
 
 h1.title {
   color: #1da1f2;
+  font-family: redaction-35;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
-div.nav {
+#nav {
   color: #ede6d7;
+}
+
+@font-face{
+  font-family: redaction-35;
+  src: url(/Applications/XAMPP/xamppfiles/htdocs/info638_wd_final/info638_web_development_final/assets/fonts/Redaction_35-Regular.woff2);
+  src: url(/Applications/XAMPP/xamppfiles/htdocs/info638_wd_final/info638_web_development_final/assets/fonts/Redaction35-Regular.otf)
+}
+
+#content {
+  color: #ede6d7;
+}
+
+li {
+  list-style-type: none;
 }
